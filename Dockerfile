@@ -6,3 +6,5 @@ RUN apt update && \
 WORKDIR /app
 
 COPY . .
+
+RUN yarn install
