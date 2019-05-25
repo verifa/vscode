@@ -9,7 +9,7 @@ kind: Pod
 spec:
   containers:
   - name: yarn-build
-    image: node:current-alpine
+    image: jlarfors/vscode:latest
     command:
     - cat
     tty: true
@@ -20,6 +20,7 @@ spec:
     stage('Build') {
       steps {
         container('yarn-build') {
+					sh 'yarn'
           sh 'yarn compile'
         }
       }
